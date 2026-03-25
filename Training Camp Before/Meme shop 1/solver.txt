@@ -1,0 +1,2 @@
+il sito esegue gli acquisti tramite un cookie in ba64 che contiene id dell'oggetto, prezzo e quantità, basta modificare il prezzo e comprare l'id della flag per ottenere:
+flag{m3m3_5h0p_m4_p3r_1l_m3m3_51_5ch3rz4_4m1c1_d3ll4_p0574l3}

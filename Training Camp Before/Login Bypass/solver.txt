@@ -1,0 +1,3 @@
+visto che returna un phpsseid si capisce che il sito utilizza php per validare le richieste e quindi proviamo a mettere name=password[] per rompere strcmp
+e infatti funziona
+flag{php_v3r510n_8_f1x3d_7h47_f347ur3}

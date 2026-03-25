@@ -1,0 +1,26 @@
+L'applicativo si presenta come un piccolo clone di twitter, possiamo quindi registrarci, eseguire il login e pubblicare dei piccoli tweet.
+
+Possiamo inoltre cercare un utente, questa funzionalità ci fa andare sul profilo di questo utente e ci fa vedere lo storico dei suoi tweet.
+
+Tuttavia se andiamo sul profilo dell'utente admin ci viene detto che non esiste, proprio come ci anticipa la descrizione della challenge.
+
+Soluzione
+La superficie di attacco di questa applicazione non è molto ampia, abbiamo infatti giusto un paio di form che possiamo usare.
+
+Una cosa da notare però, importante per capire l'architettura è cosa succede quando vediamo i tweet, che siano nostri o di un altro profilo.
+
+Nella console ci vengono stampati i dati che poi verranno renderizzati, ci salta all'occhio la struttura dell'oggetto in questione:
+
+{
+  "_id": "63c91e0c379054d19d222698",
+  "username": "asd",
+  "content": "asd"
+}
+Abbiamo infatti una proprietà _id molto caratteristica, si tratta infatti di un ID tipico dei database MongoDB, proviamo dunque i payload generici delle NoSQL injection:
+
+{
+  "username": {
+    "$ne": ""
+  }
+}
+ed in questo modo otteniamo tutti i tweet, compresi quelli dell'admin, che contiene la nostra flag.
